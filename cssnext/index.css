@@ -1,0 +1,40 @@
+@import 'highlight.js/styles/github.css';
+@import 'basscss';
+@import 'soundplayer-widget';
+
+header {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 32px;
+    text-align: center;
+    background-image: linear-gradient(45deg, rgba(255, 85, 0, 0.95), rgba(247, 95, 19, 0.8));
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.b2 {
+    border-width: 2px !important;
+}
+
+pre, code {
+    background-color: #f7f7f7;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+:root {
+    --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --container-width: 600px;
+    --yellow: rgba(255, 220, 0, 0.45);
+    --orange: #FC561E;
+    --button-line-height: 1;
+    --sb-progress-height: 8px;
+    --button-big-padding-x: 1.25rem;
+    --button-big-padding-y: 1.25rem;
+}

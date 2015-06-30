@@ -1,0 +1,45 @@
+{
+  "name": "get-soundplayer-widget",
+  "version": "0.1.0",
+  "description": "Get SoundPlayer widget",
+  "main": "src/app.js",
+  "dependencies": {
+    "babel": "^5.5.0",
+    "babelify": "^6.1.2",
+    "basscss": "^6.1.6",
+    "browserify": "^10.2.3",
+    "cssnext": "^1.5.2",
+    "deku": "^0.4.5",
+    "deku-soundplayer": "^0.1.4-rc",
+    "envify": "^3.4.0",
+    "highlight.js": "^8.6.0",
+    "soundcloud-audio": "^0.1.4",
+    "soundplayer-widget": "^0.2.3",
+    "uglify-js": "^2.4.23",
+    "watchify": "^3.2.1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "stage": 0
+        }
+      ],
+      "envify"
+    ]
+  },
+  "devDependencies": {},
+  "scripts": {
+    "watch-js": "watchify src/app.js -o public/bundle.js -v -d",
+    "watch-css": "cssnext --verbose --watch cssnext/index.css public/styles.css",
+    "build-js": "browserify src/app.js | uglifyjs -cm > public/bundle.min.js",
+    "build-css": "cssnext cssnext/index.css public/styles.min.css -c",
+    "watch": "npm run watch-js & npm run watch-css",
+    "build": "npm run build-js && npm run build-css",
+    "prepublish": "npm run build",
+    "start": "npm run watch"
+  },
+  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "license": "MIT"
+}
