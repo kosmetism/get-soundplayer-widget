@@ -10,11 +10,11 @@
     "browserify": "^10.2.3",
     "cssnext": "^1.5.2",
     "deku": "^0.4.9",
-    "deku-soundplayer": "^0.2.1",
+    "deku-soundplayer": "^0.2.2",
     "envify": "^3.4.0",
     "highlight.js": "^8.6.0",
     "soundcloud-audio": "^0.1.4",
-    "soundplayer-widget": "^0.3.3",
+    "soundplayer-widget": "^0.3.4",
     "uglify-js": "^2.4.23",
     "watchify": "^3.2.1"
   },

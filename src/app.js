@@ -3,11 +3,7 @@ import 'babel/polyfill';
 
 import deku from 'deku';
 import SoundPlayer from 'soundplayer-widget';
-import SoundCloudAudio from 'soundcloud-audio';
-
 import Code from './Code';
-
-let soundCloudAudio;
 
 const App = {
     initialState() {
@@ -15,11 +11,6 @@ const App = {
             dataUrl: 'https://soundcloud.com/shura/shura-white-light',
             clientId: '08f79801a998c381762ec5b15e4914d5'
         };
-    },
-
-    beforeMount({ state }) {
-        const { clientId } = state;
-        soundCloudAudio = new SoundCloudAudio(clientId);
     },
 
     render({ state }, updateState) {
@@ -46,6 +37,7 @@ const App = {
                         <a href="#Track" class="black">Step 1. SoundCloud Track Url</a>
                     </h2>
                     <hr class="mt1 mb1 b2 border-darken-2" />
+
                     <div class="mt2">
                         <input id="track" type="text" class="field-light full-width" placeholder="https://soundcloud.com/shura/shura-indecision-12-edit-1" onChange={getTrackUrl} value={form.dataUrl} />
                     </div>
@@ -62,7 +54,9 @@ const App = {
                 </div>
 
                 <div class="center mt3">
-                    <button class="button button-outline button-big border-olive olive b2 caps" onClick={getPlayer}>Get Player</button>
+                    <button class="button button-outline button-big border-olive olive b2 caps" onClick={getPlayer}>
+                        Get Player
+                    </button>
                 </div>
 
                 {dataUrl && clientId ? (
@@ -74,7 +68,7 @@ const App = {
 
                         {/* Preview */}
                         <div class="mt2">
-                            <SoundPlayer class="wrap" url={dataUrl} soundCloudAudio={soundCloudAudio} />
+                            <SoundPlayer class="wrap" resolveUrl={dataUrl} clientId={clientId} />
                         </div>
 
                         {/* Get Code */}
