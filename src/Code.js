@@ -1,6 +1,6 @@
 /** @jsx deku.dom */
 
-import deku from 'deku';
+import deku from 'deku'; // eslint-disable-line no-unused-vars
 import hljs from 'highlight.js';
 
 export default {
@@ -25,7 +25,7 @@ var sb_soundplayer_client_id = '${clientId}';
 
         return (
             <div>
-                <pre><code class="html" innerHTML={htmlCode.value}></code></pre>
+                <pre><code class="html" innerHTML={htmlCode.value.trim()}></code></pre>
             </div>
         );
     }

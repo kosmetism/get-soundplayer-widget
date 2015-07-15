@@ -1,12 +1,13 @@
 /** @jsx deku.dom */
-
 import 'babel/polyfill';
 
 import deku from 'deku';
-import SoundPlayer from 'deku-soundplayer';
+import SoundPlayer from 'soundplayer-widget';
 import SoundCloudAudio from 'soundcloud-audio';
 
 import Code from './Code';
+
+let soundCloudAudio;
 
 const App = {
     initialState() {
@@ -16,11 +17,15 @@ const App = {
         };
     },
 
+    beforeMount({ state }) {
+        const { clientId } = state;
+        soundCloudAudio = new SoundCloudAudio(clientId);
+    },
+
     render({ state }, updateState) {
         const { dataUrl, clientId } = state;
         let form = Object.assign({}, state);
 
-        console.log('RENDER', state);
 
         function getTrackUrl (e) {
             form.dataUrl = e.target.value;
@@ -31,7 +36,6 @@ const App = {
         }
 
         function getPlayer () {
-            console.log(form);
             updateState(form);
         }
 
@@ -70,7 +74,7 @@ const App = {
 
                         {/* Preview */}
                         <div class="mt2">
-                            <SoundPlayer class="wrap" url={dataUrl} soundCloudAudio={new SoundCloudAudio(clientId)} />
+                            <SoundPlayer class="wrap" url={dataUrl} soundCloudAudio={soundCloudAudio} />
                         </div>
 
                         {/* Get Code */}
