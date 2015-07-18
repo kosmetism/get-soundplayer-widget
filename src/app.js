@@ -1,11 +1,10 @@
 /** @jsx deku.dom */
-import 'babel/polyfill';
 
-import deku from 'deku';
+import deku from 'deku'; // eslint-disable-line no-unused-vars
 import SoundPlayer from 'soundplayer-widget';
 import Code from './Code';
 
-const App = {
+export default {
     initialState() {
         return {
             dataUrl: 'https://soundcloud.com/shura/shura-white-light',
@@ -33,42 +32,59 @@ const App = {
         return (
             <div>
                 <div>
-                    <h2 id="Track" class="h3 caps mt4">
-                        <a href="#Track" class="black">Step 1. SoundCloud Track Url</a>
+                    <h2 id="Track" class="h3 caps mt3">
+                        <a href="#Track" class="black">1. Add SoundCloud Track Url</a>
                     </h2>
                     <hr class="mt1 mb1 b2 border-darken-2" />
 
                     <div class="mt2">
-                        <input id="track" type="text" class="field-light full-width" placeholder="https://soundcloud.com/shura/shura-indecision-12-edit-1" onChange={getTrackUrl} value={form.dataUrl} />
+                        Choose the song you want to listen and insert its' SoundCloud url:
+                    </div>
+
+                    <div class="mt2">
+                        <input id="track" type="text" class="field col-12" placeholder="SoundCloud track link" onChange={getTrackUrl} value={form.dataUrl} />
                     </div>
                 </div>
 
                 <div>
-                    <h2 id="ClientId" class="h3 caps mt4">
-                        <a href="#ClientId" class="black">Step 2. SoundCloud Client ID</a>
+                    <h2 id="ClientId" class="h3 caps mt3">
+                        <a href="#ClientId" class="black">2. Get SoundCloud Client ID</a>
                     </h2>
                     <hr class="mt1 mb1 b2 border-darken-2" />
+
                     <div class="mt2">
-                        <input id="clientId" type="text" class="field-light full-width" placeholder="08f79801a998c381762ec5b15e4914d5" onChange={getClientId} value={form.clientId} />
+                        Register for an app and get SoundCloud API clientId at <a href="https://developers.soundcloud.com" target="_blank">SoundCloud developers portal</a> and paste it below:
+                    </div>
+
+                    <div class="mt2">
+                        <input id="clientId" type="text" class="field col-12 mb1" placeholder="SoundCloud client id" onChange={getClientId} value={form.clientId} />
                     </div>
                 </div>
 
-                <div class="center mt3">
-                    <button class="button button-outline button-big border-olive olive b2 caps" onClick={getPlayer}>
-                        Get Player
+                <div class="mt2 center">
+                    <button class="btn btn-primary py2 caps h6 bg-teal" onClick={getPlayer}>
+                        Generate Player
                     </button>
                 </div>
 
+                {/*<div class="mt2 italic h5">
+                    <span class="bold">Troubleshooting: and click the button below to generate player preview and embeddable script</span>
+                </div>*/}
+
                 {dataUrl && clientId ? (
-                    <div>
-                        <h2 id="Player" class="h3 caps mt4">
-                            <a href="#Player" class="black">Step 3. Copy/Paste Player Code</a>
+                    <div class="clearfix">
+                        <h2 id="Player" class="h3 caps mt3">
+                            <a href="#Player" class="black">3. Preview and Embed Player</a>
                         </h2>
                         <hr class="mt1 mb1 b2 border-darken-2" />
 
                         {/* Preview */}
-                        <div class="mt2">
+                        <div class="mt2 preview-box">
                             <SoundPlayer class="wrap" resolveUrl={dataUrl} clientId={clientId} />
+                        </div>
+
+                        <div class="mt2">
+                            Place the following code where you'd like Player to load:
                         </div>
 
                         {/* Get Code */}
@@ -77,10 +93,15 @@ const App = {
                         </div>
                     </div>
                 ) : <span />}
+
+                <h2 id="Troubleshooting" class="h3 caps mt2">
+                    <a href="#Troubleshooting" class="black">Troubleshooting</a>
+                </h2>
+                <hr class="mt1 mb1 b2 border-darken-2" />
+                <div class="mt2">
+                    Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps.If your sound isn't playing check the <a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code class="black bg-darken-1 rounded">streamable</code> property. If it is set to <code class="black bg-darken-1 rounded">false</code>, there is no way to play that sound with the API.
+                </div>
             </div>
         );
     }
 };
-
-const app = deku.tree(<App />);
-deku.render(app, document.getElementById('get-soundplayer'));

@@ -24,8 +24,20 @@ header {
 pre {
     background-color: #f7f7f7;
     font-size: 14px;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+.preview-box {
+    height: 240px;
+}
+
+.fork-on-github {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 11px;
 }
 
 :root {

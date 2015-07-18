@@ -18,14 +18,22 @@ var sb_soundplayer_client_id = '${clientId}';
     p = /^http:/.test(d.location) ? 'http' : 'https';
     js = d.createElement(s);
     js.id = id;
-    js.src = p + '://cdnjs.cloudflare.com/ajax/libs/soundplayer-widget/0.1.3/soundplayer-widget.min.js';
+    js.src = p + '://cdnjs.cloudflare.com/ajax/libs/soundplayer-widget/0.3.5/soundplayer-widget.min.js';
     fjs.parentNode.insertBefore(js, fjs);
 })(document, 'script', 'sb-soundplayer-widget-sdk');
 </script>`);
 
+        function selectText (e) {
+            // const selection = window.getSelection();
+            // const range = document.createRange();
+            // range.selectNodeContents(e.delegateTarget);
+            // selection.removeAllRanges();
+            // selection.addRange(range);
+        }
+
         return (
             <div>
-                <pre><code class="html" innerHTML={htmlCode.value.trim()}></code></pre>
+                <pre onClick={selectText}><code class="html" innerHTML={htmlCode.value.trim()}></code></pre>
             </div>
         );
     }
