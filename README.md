@@ -6,4 +6,4 @@
 
 ---
 
-** MIT Licensed **
+**MIT Licensed**
