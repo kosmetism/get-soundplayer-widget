@@ -67,10 +67,6 @@ export default {
                     </button>
                 </div>
 
-                {/*<div class="mt2 italic h5">
-                    <span class="bold">Troubleshooting: and click the button below to generate player preview and embeddable script</span>
-                </div>*/}
-
                 {dataUrl && clientId ? (
                     <div class="clearfix">
                         <h2 id="Player" class="h3 caps mt3">
@@ -98,7 +94,7 @@ export default {
                     <a href="#Troubleshooting" class="black">Troubleshooting</a>
                 </h2>
                 <hr class="mt1 mb1 b2 border-darken-2" />
-                <div class="mt2">
+                <div class="mt2 mb2">
                     Please keep in mind that SoundCloud provides an option for users to prevent streaming to third-party apps.If your sound isn't playing check the <a href="https://developers.soundcloud.com/docs/api/reference#tracks">track</a> <code class="black bg-darken-1 rounded">streamable</code> property. If it is set to <code class="black bg-darken-1 rounded">false</code>, there is no way to play that sound with the API.
                 </div>
             </div>

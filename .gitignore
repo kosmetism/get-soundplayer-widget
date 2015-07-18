@@ -4,3 +4,5 @@ node_modules
 
 public/bundle.js
 public/styles.css
+public/bundle.min.js
+public/styles.min.css
