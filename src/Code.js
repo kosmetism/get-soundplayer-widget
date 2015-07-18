@@ -24,11 +24,11 @@ var sb_soundplayer_client_id = '${clientId}';
 </script>`);
 
         function selectText (e) {
-            // const selection = window.getSelection();
-            // const range = document.createRange();
-            // range.selectNodeContents(e.delegateTarget);
-            // selection.removeAllRanges();
-            // selection.addRange(range);
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNode(e.delegateTarget);
+            selection.removeAllRanges();
+            selection.addRange(range);
         }
 
         return (

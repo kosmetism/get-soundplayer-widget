@@ -16,13 +16,18 @@ export default {
         const { dataUrl, clientId } = state;
         let form = Object.assign({}, state);
 
-
         function getTrackUrl (e) {
-            form.dataUrl = e.target.value;
+            const value = e.target.value;
+            if (value) {
+                form.dataUrl = value;
+            }
         }
 
         function getClientId (e) {
-            form.clientId = e.target.value;
+            const value = e.target.value;
+            if (value) {
+                form.clientId = value;
+            }
         }
 
         function getPlayer () {
