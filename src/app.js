@@ -80,7 +80,7 @@ export default {
                         <hr class="mt1 mb1 b2 border-darken-2" />
 
                         {/* Preview */}
-                        <div class="mt2 preview-box">
+                        <div class="mt2 preview-box sb-soundplayer-widget">
                             <SoundPlayer class="wrap" resolveUrl={dataUrl} clientId={clientId} />
                         </div>
 
