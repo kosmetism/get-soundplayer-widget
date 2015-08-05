@@ -1,7 +1,7 @@
-/** @jsx deku.dom */
-
-import deku from 'deku'; // eslint-disable-line no-unused-vars
+/** @jsx element */
+import element from 'virtual-element'; // eslint-disable-line no-unused-vars
 import SoundPlayer from 'soundplayer-widget';
+
 import Code from './Code';
 
 export default {

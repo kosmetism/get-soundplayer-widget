@@ -1,6 +1,5 @@
-/** @jsx deku.dom */
-
-import deku from 'deku'; // eslint-disable-line no-unused-vars
+/** @jsx element */
+import element from 'virtual-element'; // eslint-disable-line no-unused-vars
 import hljs from 'highlight.js';
 
 export default {
