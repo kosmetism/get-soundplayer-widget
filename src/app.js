@@ -7,8 +7,8 @@ import Code from './Code';
 export default {
     initialState() {
         return {
-            dataUrl: 'https://soundcloud.com/shura/shura-white-light',
-            clientId: '08f79801a998c381762ec5b15e4914d5'
+            dataUrl: 'https://soundcloud.com/ksmtk/chronemics',
+            clientId: ''
         };
     },
 
