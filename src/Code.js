@@ -1,5 +1,5 @@
-/** @jsx element */
-import element from 'virtual-element'; // eslint-disable-line no-unused-vars
+/** @jsx dom */
+import dom from 'magic-virtual-element'; // eslint-disable-line no-unused-vars
 import hljs from 'highlight.js';
 
 export default {

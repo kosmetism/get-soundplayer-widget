@@ -1,5 +1,5 @@
-/** @jsx element */
-import element from 'virtual-element'; // eslint-disable-line no-unused-vars
+/** @jsx dom */
+import dom from 'magic-virtual-element'; // eslint-disable-line no-unused-vars
 import SoundPlayer from 'soundplayer-widget';
 
 import Code from './Code';
@@ -95,7 +95,7 @@ export default {
                     </div>
                 ) : <span />}
 
-                <h2 id="Troubleshooting" class="h3 caps mt2">
+                <h2 id="Troubleshooting" class="h3 caps mt3">
                     <a href="#Troubleshooting" class="black">Troubleshooting</a>
                 </h2>
                 <hr class="mt1 mb1 b2 border-darken-2" />

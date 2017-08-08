@@ -1,23 +1,16 @@
 {
   "name": "get-soundplayer-widget",
-  "version": "0.2.0",
+  "version": "0.4.1",
   "description": "Get SoundPlayer widget",
   "main": "src/index.js",
   "dependencies": {
-    "babel": "^5.5.0",
-    "babelify": "^6.1.2",
-    "basscss": "^7.0.0",
-    "browserify": "^10.2.3",
-    "cssnext": "^1.5.2",
-    "deku": "^0.5.0",
-    "deku-soundplayer": "^0.2.6",
-    "envify": "^3.4.0",
-    "highlight.js": "^8.6.0",
+    "basscss": "7.0.0",
+    "deku": "1.0.0",
+    "deku-soundplayer": "^0.4.3",
+    "highlight.js": "8.6.0",
     "soundcloud-audio": "^0.1.4",
-    "soundplayer-widget": "^0.3.6",
-    "uglify-js": "^2.4.23",
-    "virtual-element": "^1.1.1",
-    "watchify": "^3.2.1"
+    "soundplayer-widget": "^0.4.2",
+    "magic-virtual-element": "1.0.x"
   },
   "browserify": {
     "transform": [
@@ -30,7 +23,15 @@
       "envify"
     ]
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel": "5.5.0",
+    "babelify": "6.1.2",
+    "browserify": "10.2.3",
+    "cssnext": "1.5.2",
+    "envify": "3.4.0",
+    "uglify-js": "2.4.23",
+    "watchify": "3.2.1"
+  },
   "scripts": {
     "watch-js": "watchify src/index.js -o public/bundle.js -v -d",
     "watch-css": "cssnext --verbose --watch cssnext/index.css public/styles.css",
