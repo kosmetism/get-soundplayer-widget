@@ -7,7 +7,7 @@ import Code from './Code';
 export default {
     initialState() {
         return {
-            dataUrl: 'https://soundcloud.com/ksmtk/chronemics',
+            dataUrl: 'https://soundcloud.com/kosmetism/chronemics',
             clientId: ''
         };
     },
