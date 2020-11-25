@@ -7,7 +7,7 @@
     "basscss": "7.0.0",
     "deku": "1.0.0",
     "deku-soundplayer": "^0.4.3",
-    "highlight.js": "8.6.0",
+    "highlight.js": "10.1.2",
     "soundcloud-audio": "^0.1.4",
     "soundplayer-widget": "^0.4.2",
     "magic-virtual-element": "1.0.x"
