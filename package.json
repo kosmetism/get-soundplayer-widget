@@ -24,13 +24,13 @@
     ]
   },
   "devDependencies": {
-    "babel": "5.5.0",
-    "babelify": "6.1.2",
-    "browserify": "10.2.3",
+    "babel": "6.23.0",
+    "babelify": "10.0.0",
+    "browserify": "17.0.0",
     "cssnext": "1.5.2",
     "envify": "3.4.0",
     "uglify-js": "2.4.23",
-    "watchify": "3.2.1"
+    "watchify": "3.11.1"
   },
   "scripts": {
     "watch-js": "watchify src/index.js -o public/bundle.js -v -d",
